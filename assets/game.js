@@ -23,11 +23,22 @@ var crystal3;
 var crystal4;
 
 //START FUNCTION
+function startGame() {
+    //set totalScore to 0
+    totalscore = 0;
+    $("total-score").text(totalScore);
+
+    //set winCounter to 0
+    winCounter = 0;
+
+    //set lossCounter to 0
+    lossCounter = 0;
+    
     //set crystal1 to random number between 1-12
     crystal1 = Math.ceil(Math.random() * 12);
     //give ".crystal one" an attribute "crystal-value" equal to crystal1
     $(".three").attr("crystal-value", crystal1)
-;
+    ;
     //set crystal2 to random number between 1-12
     crystal2 = Math.ceil(Math.random() * 12);
     //give ".crystal one" an attribute "crystal-value" equal to crystal2
@@ -37,28 +48,51 @@ var crystal4;
     crystal3 = Math.ceil(Math.random() * 12);
     //give ".crystal three" an attribute "crystal-value" equal to crystal3
     $(".three").attr("crystal-value", crystal3);
-
+    
     //set crystal4 to random number between 1-12
     crystal4 = Math.ceil(Math.random() * 12);
     //give ".crystal four" an attribute "value" equal to crystal4
     $(".four").attr("crystal-value", crystal4);
-
+    
     //set randomNum to random number between 19-120
     randomNum = Math.floor(Math.random() * 112) + 19;
     $("random-number").text(randomNum);
-
-    //END START FUNCTION
+    
+//END START FUNCTION
+}
 
 
   //ONCLICK FUNCTION
+    $("crystal").on("click", function() {
 
-    //when a crystal is clicked, add to total score
+        //when a crystal is clicked, add to total score
+        totalScore += $(this).attr("crystal-value");
+        $("#total-score").text(totalScore);
+        
+        //compare totalScore to randomNum (if)
 
-    //compare totalScore to randomNum (if)
+        //if totalScore is equal to randomNum
+        if (totalScore == randomNum) {
+            //increment winCounter
+            winCounter++
 
-        //if totalScore is less than randomNum, do not execute
-        //if totalScore is equal to randomNum, increment win counter
+            //update win-counter on html
+            $("#win-counter").text(winCounter);
+
             //call START function
-        //if totalScore is greater than randomNum, increment loss counter
-            //call START FUNCTION
+            startGame();
+        }
+        //if totalScore is greater than randomNum
+        else if (totalScore >= randomNum) {
+            //increment lossCounter
+            lossCounter++;
 
+            //update loss-counter on html
+            $("#loss-counter").text(lossCounter);
+
+            //call START FUNCTION
+            startGame();
+        }
+        
+    //END ONCLICK FUNCTION
+    });
