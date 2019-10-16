@@ -71,7 +71,7 @@ $(document).ready(function() {
         $(".four").attr("crystal-value", crystal4);
         
         //set randomNum to random number between 19-120
-        randomNum = Math.floor(Math.random() * 112) + 19;
+        randomNum = Math.floor(Math.random() * 102) + 19;
         
         //update #random-number on html
         $("#random-number").text(randomNum);
