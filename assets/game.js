@@ -80,6 +80,9 @@ $(document).ready(function() {
 
     //ONCLICK FUNCTION
     $(".crystal").on("click", function() {
+        //clear the message on html
+        $("#message").text("");
+
         
         //when a crystal is clicked, add to total score
         totalScore += parseInt($(this).attr("crystal-value"));
@@ -97,6 +100,9 @@ $(document).ready(function() {
             
             //update win-counter on html
             $("#win-counter").text(winCounter);
+
+            //print winning message
+            $("#message").text("You Win!!!");
             
             //call START function
             startGame();
@@ -105,10 +111,12 @@ $(document).ready(function() {
         else if (totalScore > randomNum) {
             //increment lossCounter
             lossCounter++;
-            console.log("Losses: " + lossCounter);
             
             //update loss-counter on html
             $("#loss-counter").text(lossCounter);
+
+            //print losing message
+            $("#message").text("You Lose!!! Try Again.");
             
             //call START FUNCTION
             startGame();
