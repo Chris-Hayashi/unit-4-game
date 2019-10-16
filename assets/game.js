@@ -1,6 +1,6 @@
+//Execute this block of code once the DOM is safe to mainpulate
 $(document).ready(function() {
 
-    
     //create a var named randomNum
     var randomNum;
     
@@ -30,12 +30,14 @@ $(document).ready(function() {
 
     //set #loss-counter to 0 on html
     $("#loss-counter").text(lossCounter);
-    
+
     
     //START FUNCTION
     function startGame() {
         //set totalScore to 0
         totalScore = 0;
+
+        //reset #total-score on html back to 0
         $("#total-score").text(totalScore);
         
         //set #win-counter back to 0 on html
@@ -47,31 +49,31 @@ $(document).ready(function() {
         //set crystal1 to random number between 1-12
         crystal1 = Math.ceil(Math.random() * 12);
         
-        //give ".crystal one" an attribute "crystal-value" equal to crystal1
+        //give ".one" an attribute "crystal-value" equal to crystal1
         $(".one").attr("crystal-value", crystal1);
         
         //set crystal2 to random number between 1-12
         crystal2 = Math.ceil(Math.random() * 12);
         
-        //give ".crystal one" an attribute "crystal-value" equal to crystal2
+        //give ".two" an attribute "crystal-value" equal to crystal2
         $(".two").attr("crystal-value", crystal2);
         
         //set crystal3 to random number between 1-12
         crystal3 = Math.ceil(Math.random() * 12);
         
-        //give ".crystal three" an attribute "crystal-value" equal to crystal3
+        //give ".three" an attribute "crystal-value" equal to crystal3
         $(".three").attr("crystal-value", crystal3);
         
         //set crystal4 to random number between 1-12
         crystal4 = Math.ceil(Math.random() * 12);
         
-        //give ".crystal four" an attribute "value" equal to crystal4
+        //give ".four" an attribute "crystal-value" equal to crystal4
         $(".four").attr("crystal-value", crystal4);
         
         //set randomNum to random number between 19-120
         randomNum = Math.floor(Math.random() * 112) + 19;
         
-        //update random-number on html
+        //update #random-number on html
         $("#random-number").text(randomNum);
         
     //END START FUNCTION
@@ -80,16 +82,15 @@ $(document).ready(function() {
 
     //ONCLICK FUNCTION
     $(".crystal").on("click", function() {
+
         //clear the message on html
         $("#message").text("");
-
         
         //when a crystal is clicked, add to total score
         totalScore += parseInt($(this).attr("crystal-value"));
 
         //update total-score on html
         $("#total-score").text(totalScore);
-        
         
         //Compare totalScore to randomNum (use if/else if statements)
         //if totalScore is equal to randomNum
@@ -125,5 +126,6 @@ $(document).ready(function() {
     //END ONCLICK FUNCTION
     });
 
+    //Start the game for the first time
     startGame();
 });
