@@ -1,14 +1,14 @@
 //Execute this block of code once the DOM is safe to mainpulate
 $(document).ready(function() {
+    
+    //create a var named winCounter initialized to 0
+    var winCounter = 0;
+    
+    //create a var named lossCounter initialized to 0
+    var lossCounter = 0;
 
     //create a var named randomNum
     var randomNum;
-    
-    //create a var named winCounter
-    var winCounter = 0;
-    
-    //create a var named lossCounter
-    var lossCounter = 0;
     
     //create a var named totalScore
     var totalScore;
@@ -39,12 +39,6 @@ $(document).ready(function() {
 
         //reset #total-score on html back to 0
         $("#total-score").text(totalScore);
-        
-        //set #win-counter back to 0 on html
-        $("#win-counter").text(winCounter);
-
-        //set #loss-counter back to 0 on html
-        $("#loss-counter").text(lossCounter);
         
         //set crystal1 to random number between 1-12
         crystal1 = Math.ceil(Math.random() * 12);
@@ -97,7 +91,6 @@ $(document).ready(function() {
         if (totalScore == randomNum) {
             //increment winCounter
             winCounter++;
-            console.log("Wins: " + winCounter);
             
             //update win-counter on html
             $("#win-counter").text(winCounter);
