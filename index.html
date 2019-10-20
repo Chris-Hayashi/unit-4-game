@@ -15,8 +15,7 @@
         <h1>Crystals Collector!</h1>
 
         <div id="instructions">
-            <h2>Instructions</h2>
-            <br>
+            <h2 id="instructions-header">Instructions</h2>
             <p>You will be given a random number at the start of the game.</p>
             <br>
             <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score.</p>
@@ -26,30 +25,26 @@
             <p>The value of each crystal is unknown until you click it.</p>
             <br>
             <p>Each time the game starts, the game will change the value of each crystal.</p>
+            <br>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <h3>Wins: <span id="win-counter"></span></h3>
         <h3>Losses: <span id="loss-counter"></span></h3>
 
         <h2 id="random-number"></h2>
 
-        <img class="crystal one" src="assets/images/Crystal1.gif">
-        <img class="crystal two" src="assets/images/Crystal2.gif">
-        <img class="crystal three" src="assets/images/Crystal3.gif">
-        <img class="crystal four" src="assets/images/Crystal4.gif">
-
+        <div id="images">
+            <img class="crystal one" src="assets/images/Crystal1.gif">
+            <img class="crystal two" src="assets/images/Crystal2.gif">
+            <img class="crystal three" src="assets/images/Crystal3.gif">
+            <img class="crystal four" src="assets/images/Crystal4.gif">
+            <h2 id="total-score-css">&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;Total Score: <span id="total-score"></span></h2>
+            <br>
+            <h2 id="message-format"><span id="message"></span></h2>
+        </div>
+        
         <br>
-        <br>
-        <br>
 
-        <h2>Total Score: <span id="total-score"></span></h2>
-
-        <h2 id="message"></h2>
 
         <!-- Link Jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

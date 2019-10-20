@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    color: white;
+    position: static;
+    color: burlywood;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -16,11 +17,56 @@ h3 {
     font-size: 200%;
 }
 
-#instructions {
-    float: left;
+p {
+    color: rgb(141, 54, 14);
+    font-size: 110%;
+    margin: 0;
+    padding: 0;
 }
 
 img {
+    width: 200px;
+    height: 200px;
+}
+
+#instructions-header {
+    font-size: 300%;
+}
+
+#instructions {
+    float: left;
+    border-style: solid;
+}
+
+#random-number {
+    font-size: 500%;
+}
+
+#images {
+    float: left;
     display: inline-block;
     align-content: center;
+    vertical-align: middle;
+}
+
+#total-score-css {
+    position: relative;
+    align: right;
+    float: right;
+    font-size: 200%;
+}
+
+#total-score {
+    font-size: 300%;
+}
+#message-format {
+    color: black;
+    text-align: center;
+    font-size: 300%;
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin: 0;
+    align: right;
+    left: 150px;
 }
